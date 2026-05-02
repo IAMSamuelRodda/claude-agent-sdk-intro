@@ -16,7 +16,6 @@ async def main():
     console = Console()
     args = parser.parse_args()
 
-    
     options = ClaudeAgentOptions(
         model=args.model,
         allowed_tools=[
@@ -27,7 +26,28 @@ async def main():
             'Grep',
             'Glob',
             # Notice that you MUST allow MCP tools otherwise they will not be available by default.
-            # 'mcp__Playwright__browser_navigate'
+            'mcp__Playwright__browser_navigate',
+            'mcp__Playwright__browser_install',
+            'mcp__Playwright__browser_close',
+            'mcp__Playwright__browser_resize',
+            'mcp__Playwright__browser_console_messages',
+            'mcp__Playwright__browser_handle_dialog',
+            'mcp__Playwright__browser_evaluate',
+            'mcp__Playwright__browser_file_upload',
+            'mcp__Playwright__browser_fill_form',
+            'mcp__Playwright__browser_press_key',
+            'mcp__Playwright__browser_type',
+            'mcp__Playwright__browser_navigate_back',
+            'mcp__Playwright__browser_network_requests',
+            'mcp__Playwright__browser_take_screenshot',
+            'mcp__Playwright__browser_snapshot',
+            'mcp__Playwright__browser_click',
+            'mcp__Playwright__browser_drag',
+            'mcp__Playwright__browser_hover',
+            'mcp__Playwright__browser_select_option',
+            'mcp__Playwright__browser_tabs',
+            'mcp__Playwright__browser_wait_for',
+            'mcp__Playwright__browser_wait_for_timeout',
         ],
         permission_mode="acceptEdits",
         setting_sources=["project"],
